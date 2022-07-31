@@ -1,10 +1,8 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import "./index.css";
 
 function App() {
-  return (
-    <h1>Hello World</h1>
-  );
+  return <div></div>;
 }
 
 export default App;
