@@ -1,32 +1,25 @@
 import React from 'react';
-import { removeHyphensAndCapitalize } from '../../utils/helpers';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-
-function Project({ project }) {
-    const { name, repo, link, description } = project;
-
+// Individual Cards
+function ProjectCards(props) {
     return (
-        <div className="col-lg-4 col-sm-6">
-            <div className="portfolio-box" key={name}>
-                <img
-                    src={require(`../../assets/img/portfolio/${name}.jpg`)}
-                    alt={removeHyphensAndCapitalize(name)}
-                    className="img-fluid"
-                />
-                <div className="portfolio-box-caption">
-                    <div className="portfolio-box-caption-content">
-                        <a href={repo} className="project-category text-faded" target="_blank">
-                            <i className="fab fa-github"></i>
-                        </a>
-                        <br />
-                        <a href={link} className="project-category text-faded" target="_blank">{removeHyphensAndCapitalize(name)}</a>{' '}
-
-                        <p className="project-name">{description}</p>
-                    </div>
-                </div>
-            </div>
+        <div className="card">
+            <div className="img-container">
+                <img alt={props.name} src={props.image} />
         </div>
-    );
+        <div className="content">
+            <p className="card-title">{props.name}</p>
+            <p class="proj-icons-container">
+                <a href={props.github}><img class="project-icon" src="https://cdn.iconscout.com/icon/free/png-48/github-1884646-1596821.png" alt="GitHub Repo" /></a>
+                <a href={props.deploy}><img class="project-icon" src="https://cdn.iconscout.com/icon/free/png-48/domain-2046258-1730026.png"alt="Live Application" /></a>
+            </p>
+            <p class="description">
+                ({props.description})
+                </p>
+        </div>
+        </div>
+    )
 }
 
 export default Project;

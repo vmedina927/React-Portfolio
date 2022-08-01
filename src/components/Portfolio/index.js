@@ -1,33 +1,27 @@
-import React, { useState } from 'react';
-import Porject from '../Project';
-import { capitalizeFirstLetter } from '../../utils/helpers';
+import React from 'react';
+import ProjectCards from '../../components/Project';
+import portfolio from '../../portfolio.json';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+function Wrapper(props) {
+    return <div className="wrapper">{props.children}</div>;
+}
 
 function Portfolio() {
-    const [pages] = useState([
-        {
-            name: 'portfolio'
-        }
-    ]);
+    return (
+        <section className="container">
+            <div className="project">
+                <h2 className="top-title">Portfolio</h2>
+                <hr></hr>
+            </div>
 
-    const [currentPage] = useState(pages[0]);
-    const [projects] = useState([
-        {
-            name: 'run-buddy',
-            description:'HTML/CSS',
-            link: 'https://vmedina927.github.io/Professional-Portfolio/',
-            repo: 'https://github.com/vmedina927/run-buddy'
-        },
-        {
-            name: 'travel-easy-project1',
-            description:'HTML/CSS/Bulma/Moment.js/JavaScript',
-            link: 'https://cpriyam90.github.io/Travel-Easy-Project1/',
-            repo: 'https://github.com/vmedina927/Travel-Easy-Project1'
-        },
-        {
-            name: '',
-            description:'',
-            link: '',
-            repo: ''
-        }
-    ]
-};
+            <Wrapper id="card-data">
+                {portfolio.map((project) => (
+                    <ProjectCards key={project.id} image={project.name} github={project.github} deploy={project.deploy} description={project.description}/>
+                ))}
+            </Wrapper>
+            </section>
+    );
+}
+
+export default Portfolio;
