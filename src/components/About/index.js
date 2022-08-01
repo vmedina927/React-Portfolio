@@ -1,30 +1,29 @@
-import React, { useState } from 'react';
-import { capitalizeFirstLetter } from '../../utils/helpers';
+import React from 'react';
 
 function About() {
-    const [pages] = useState([
-        {
-            name: "about me"
-        }
-    ]);
-    const [currentPage] = useState(pages[0]);
+    return(
+        <section className="container">
+            <h2 class="top-title">Vickiana Medina</h2>
+            <hr></hr>
+            <div>
+                <img class="mb-5" id="avatar" src="src/assets/img/Portrait.jpeg" alt="Vickiana Medina" />
 
-    return (
-        <div className="masthead text-center text-white d-flex">
-            <div className="container my-auto">
-                <div className="row">
-                    <div className="col-lg-10 mx-auto">
-                        <h1>{capitalizeFirstLetter(currentPage.name)}</h1>
-                        <hr />
-                        <p className="text-faded mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie</p>
-
-                        <p className="text-faded mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultricie</p>
-                        {/* <a className="btn btn-primary btn-xl js-scroll-trigger" href="#about">Check Out My Work</a> */}
-                    </div>
-                </div>
+                <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec bibendum turpis sed ex
+                condimentum molestie. Mauris condimentum lectus ut ornare dignissim. Mauris faucibus urna
+                mi, ac feugiat metus aliquam maximus. Proin aliquam justo nec diam vulputate vestibulum.
+                </p>
+                <p>
+                Aenean sollicitudin nulla at nisi ornare, nec suscipit massa eleifend. Morbi tristique
+                justo vel turpis sollicitudin, et tristique velit convallis. In hac habitasse platea
+                dictumst.
+                </p>
+                <p>
+                Curabitur imperdiet ultricies mollis. In hac habitasse platea dictumst.
+                </p>
             </div>
-        </div>
-    )
+        </section>
+        )
 }
 
-export default About
+export default About;
