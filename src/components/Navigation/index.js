@@ -1,44 +1,42 @@
-import React, { useEffect } from 'react';
-import { capitalizeFirstLetter } from '../../utils/helpers';
+import React from 'react';
+import { Navbar } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
 
-function Nav(props) {
-    const {
-        pages = [],
-        setCurrentPage,
-        currentPage,
-    } = props;
 
-    useEffect(() => {
-        document.title = capitalizeFirstLetter(currentPage.name);
-    }, [currentPage]);
-
+function Navigation(props) {
     return (
-        <nav className="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-            <div className="container">
-                <a className href="navbar-brand js-scroll-trigger">Vickiana Medina</a>
-                <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                </button>
-                <div className="collapse navbar-collapse" id="navbarResponsive">
-                    <ul className="navbar-nav ml-auto">
-                        {pages.map((Page) => (
-                            <li
-                                className={`nav-item nav-link js-scroll-trigger ${currentPage.name === Page.name && 'active'
-                                    }`}
-                                key={Page.name}
-                            >
-                                <span
-                                    onClick={() => setCurrentPage(Page)}
-                                >
-                                    {capitalizeFirstLetter(Page.name)}
-                                </span>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-            </div>
-        </nav>
+        <div>
+            <Navbar expand="lg" bg="dark" sticky="top">
+                <NavLink className="nav-link" to="/">
+                    <div class ="text-light">
+                        <h4 class="nav-title-font">Vickiana Medina</h4> 
+                    </div>
+                </NavLink>
+                <ul class="navbar-nav ml-auto navitem-indent">
+                    <li class="nav-item">
+                        <NavLink to="/about">
+                            <div class ="nav-font text-light">About Me</div>
+                        </NavLink>
+                        </li>
+                        <li class="nav-item">
+                        <NavLink to="/portfolio">
+                            <div class ="nav-font text-light">Portfolio</div>
+                        </NavLink>
+                        </li>
+                        <li class="nav-item">
+                        <NavLink to="/contact">
+                            <div class ="nav-font text-light">Contact</div>
+                        </NavLink>
+                        </li>
+                        <li class="nav-item">
+                        <NavLink to="/resume">
+                            <div class ="nav-font text-light">Resume</div>
+                        </NavLink>
+                        </li>
+                </ul>
+            </Navbar>
+        </div>
     );
 }
 
-export default Nav;
+export default Navigation;
