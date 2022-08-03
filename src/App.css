@@ -31,7 +31,7 @@ code {
 
 
 body {
-  background-color: #EDEDF5;
+  background-color: #4A2545;
 }
 
 .page-footer {
@@ -40,7 +40,7 @@ body {
 }
 
 .card {
-  background-color: white;
+  background-color: #824C71;
   border-radius: 2px;
   height: 525px;
   margin: 1rem;
@@ -102,11 +102,11 @@ input:focus {
 textarea {
 	width: 600px;
 	height: 120px;
-	border: 3px solid #cccccc;
+	border: 3px solid #4A2545;
 	padding: 5px;
 }
 button {
-	background: blue;
+	background: #824C71;
 	border: 0;
 	border-radius: 5px;
 	color: #fff;
